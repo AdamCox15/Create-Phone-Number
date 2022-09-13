@@ -34,3 +34,41 @@ const createPhoneNumber3 = (arr) => {
 
 console.log(createPhoneNumber3([1, 2, 3, 4, 5, 6, 7, 8, 9, 0]));
 
+//--------------------------------------------------
+
+let testArr = [1,2,3,4,5,6,7,8,9,0];
+
+let newArr = [...testArr];
+
+newArr.splice(0, 0, '(');
+newArr.splice(4, 0, ')');
+newArr.splice(5, 0, ' ');
+newArr.splice(9, 0, '-');
+newArr = newArr.join('').toString();
+
+//----------------------------------------------------
+const createPhoneNumber4 = (arr) => {
+
+    let finalNum = ''
+  
+    for(let i = 0; i < arr.length; i++){
+      
+      if(i === 0){
+        finalNum += '('
+        finalNum += arr[0]
+      }else if(i === 2){
+        finalNum += arr[2]
+        finalNum += ') '
+      }else if(i === 5){
+        finalNum += arr[5]
+        finalNum += '-'
+      }else{
+        finalNum += arr[i]
+      }
+      
+    }
+  
+    console.log(finalNum)  
+  }
+  
+  createPhoneNumber4([1, 2, 3, 4, 5, 6, 7, 8, 9, 0])
